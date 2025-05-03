@@ -1,0 +1,9 @@
+port: 4001
+stage:
+services:
+  - srvName: core
+    srvPath: core
+    srvSource: services/core
+  - srvName: matches
+    srvPath: matches
+    srvSource: services/matches

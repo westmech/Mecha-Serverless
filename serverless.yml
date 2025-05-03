@@ -1,0 +1,20 @@
+# "org" ensures this Service is used with the correct Serverless Framework Access Key.
+org: westmech
+# "app" enables Serverless Framework Dashboard features and sharing them with other Services.
+app: mecha-serverless
+frameworkVersion: "4"
+# "service" is the name of this project. This will also be added to your AWS resource names.
+service: mecha-serverless
+
+provider:
+  name: aws
+  runtime: nodejs20.x
+
+custom:
+  serverless-offline:
+    port: 4000
+  stage: ${opt:stage, 'dev'}
+  region: ${opt:region, 'us-east-1'}
+
+plugins:
+  - serverless-offline
