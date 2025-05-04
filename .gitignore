@@ -3,6 +3,8 @@ node_modules/
 .serverless
 undefined
 package-lock.json
-.dist
 config
 .env
+.dist
+dist
+../dist
