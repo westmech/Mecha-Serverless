@@ -1,6 +1,7 @@
+
 frameworkVersion: "4"
 
-service: core
+service: teams
 
 provider:
     name: aws
@@ -10,10 +11,10 @@ provider:
 
 functions:
     getYear:
-        handler: handler.getYear
+        handler: handler.test
         events:
             - http:
-                  path: core/year
+                  path: teams/test
                   method: get
                   cors: true
 
@@ -25,3 +26,4 @@ custom:
         lambdaPath: ./dist
         noPrependStageInUrl: true
         servicePath: ${__dirname}
+

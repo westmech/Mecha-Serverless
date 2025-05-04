@@ -1,8 +1,8 @@
 
 {
-  "name": "matches",
+  "name": "events",
   "version": "1.0.0",
-  "description": "Serverless service for matches",
+  "description": "Serverless service for events",
     "main": "handler.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",

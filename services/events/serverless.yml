@@ -1,0 +1,65 @@
+frameworkVersion: "4"
+
+service: events
+
+provider:
+    name: aws
+    runtime: nodejs20.x
+    httpApi:
+        disableDefaultEndpoint: true
+
+functions:
+    ping:
+        handler: ./handler.test
+        events:
+            - http:
+                  path: events/ping
+                  method: get
+                  cors: true
+    getYear:
+        handler: handler.getCurrYear
+        events:
+            - http:
+                path: events/getYear
+                method: get
+                cors: true
+                request:
+                    parameters:
+                        querystrings:
+                            year: true
+    streamMatches:
+        handler: handler.streamMatches
+        events:
+            - http:
+                path: events/matches/stream
+                method: get
+                cors: true
+                request:
+                    parameters:
+                        querystrings:
+                            filters: false
+                            year: true
+                            div: true
+                            currentPage: true
+                            currentRound: true
+    getMatches:
+        handler: handler.getMatches
+        events:
+            - http:
+                path: events/matches
+                method: get
+                cors: true
+                request:
+                    parameters:
+                        querystrings:
+                            year: true
+                            div: true
+
+plugins:
+    - serverless-offline
+
+custom:
+    serverless-offline:
+        lambdaPath: ./dist
+        noPrependStageInUrl: true
+        servicePath: ${__dirname}
