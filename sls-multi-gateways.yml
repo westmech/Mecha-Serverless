@@ -7,3 +7,9 @@ services:
   - srvName: teams
     srvPath: teams
     srvSource: services/teams
+  - srvName: media
+    srvPath: media
+    srvSource: services/media
+  - srvName: stats
+    srvPath: stats
+    srvSource: services/stats

@@ -1,7 +1,7 @@
 {
-  "name": "teams",
+  "name": "media",
   "version": "1.0.0",
-  "description": "Serverless service for teams",
+  "description": "Serverless service for media",
   "main": "handler.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -12,6 +12,7 @@
   "license": "ISC",
   "devDependencies": {
     "@types/express": "^5.0.1",
+    "@types/heic-convert": "^2.1.0",
     "@types/node": "^22.15.3",
     "express": "^4.19.2",
     "formidable": "^3.5.4",
@@ -25,6 +26,10 @@
     "typescript": "^5.8.3"
   },
   "dependencies": {
-    "dotenv": "^16.5.0"
+    "@aws-sdk/client-s3": "^3.802.0",
+    "aws-sdk": "^2.1692.0",
+    "dotenv": "^16.5.0",
+    "heic-convert": "^2.1.0",
+    "sharp": "^0.34.1"
   }
 }

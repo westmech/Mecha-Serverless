@@ -1,7 +1,7 @@
 
 frameworkVersion: "4"
 
-service: teams
+service: media
 
 provider:
     name: aws
@@ -14,27 +14,23 @@ functions:
         handler: handler.test
         events:
             - http:
-                  path: teams/ping
+                  path: media/ping
                   method: get
                   cors: true
-    getOneTeam:
-        handler: handler.getOneTeam
+    getPhoto:
+        handler: handler.getPhoto
         events:
             - http:
-                path: teams/{id}
+                path: media/photo/{filename}
                 method: get
                 cors: true
-    getAllTeams:
-        handler: handler.getAllTeams
+    getGallery:
+        handler: handler.getGallery
         events:
             - http:
-                path: teams
+                path: media/gallery
                 method: get
                 cors: true
-                request:
-                    parameters:
-                        querystrings:
-                            year: false
 
 plugins:
     - serverless-offline

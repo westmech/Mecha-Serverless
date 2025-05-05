@@ -8,7 +8,8 @@ import {
     Callback,
     APIGatewayProxyResult,
 } from "aws-lambda";
-import { validateStreamMatchesQuery, yearToKeyMap } from "./helpers";
+import { yearToKeyMap } from "../../lib/years";
+import { validateStreamMatchesQuery } from "./helpers";
 
 const api_key = process.env.ROBOTEVENTS_API_KEY || "";
 

@@ -1,0 +1,37 @@
+
+frameworkVersion: "4"
+
+service: stats
+
+provider:
+    name: aws
+    runtime: nodejs20.x
+    httpApi:
+        disableDefaultEndpoint: true
+
+functions:
+    getYear:
+        handler: handler.test
+        events:
+            - http:
+                  path: stats/ping
+                  method: get
+                  cors: true
+    getAwards:
+        handler: handler.getAwards
+        events:
+            - http:
+                 path: stats/awards/{year}
+                 method: get
+                 cors: true
+
+
+plugins:
+    - serverless-offline
+
+custom:
+    serverless-offline:
+        lambdaPath: ./dist
+        noPrependStageInUrl: true
+        servicePath: ${__dirname}
+

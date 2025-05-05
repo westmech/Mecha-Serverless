@@ -1,7 +1,7 @@
 {
-  "name": "teams",
+  "name": "stats",
   "version": "1.0.0",
-  "description": "Serverless service for teams",
+  "description": "Serverless service for stats",
   "main": "handler.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
